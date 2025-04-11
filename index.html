@@ -49,8 +49,14 @@
 
     .product-image {
       width: 50%;
-      object-fit: cover;
       height: 100%;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .content {
@@ -120,7 +126,7 @@
       background-color: var(--Green-700);
     }
 
-        /* Responsive (stack on mobile) */
+    /* Responsive (stack on mobile) */
     @media (max-width: 600px) {
       .container {
         flex-direction: column;
@@ -134,12 +140,19 @@
       .product-image {
         height: auto;
       }
+
+      .product-image img {
+        height: auto;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="images/image-product-desktop.jpg" alt="Gabrielle Essence Eau De Parfum" class="product-image" />
+    <picture class="product-image">
+      <source media="(max-width: 600px)" srcset="images/image-product-mobile.jpg" />
+      <img src="images/image-product-desktop.jpg" alt="Gabrielle Essence Eau De Parfum" />
+    </picture>
     <div class="content">
       <p class="head_text">Perfume</p>
       <h1 class="Product_name">Gabrielle Essence Eau De Parfum</h1>
